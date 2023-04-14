@@ -11,22 +11,23 @@ export function NavComponent() {
         <div>
             <button
                 onClick={() => {
-                    setPage("foo");
+                    setPage("login");
                 }}>
                 Login
             </button>
             <button
                 onClick={() => {
-                    setPage("bar")
+                    setPage("register")
                 }}
             >
                 Register
             </button>
             <div>
-                {//(page) ? <Login /> : <Register />
+                {
                     {
-                        'foo': <Login />,
-                        'bar': <Register />
+                        'login': <Login />,
+                        'register': <Register />
+
                     }[page]
                 }
 
