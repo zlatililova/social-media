@@ -3,28 +3,32 @@ export function Login() {
         event.preventDefault();
         const form = event.target;
         const name = form.name;
-        const username = name.value;
-        console.log(username);
-        const body = { name: username };
-        /*const requestOptions = {
-            method: 'POST',
-            headers: {},
-            body: JSON.stringify(body)
-        };*/
-        //console.log("Convert " + JSON.stringify(body));
+        const body = { name: name.value };
+
         fetch('http://localhost:3000/login', {
             method: 'POST',
-            credentials: "include",
             headers: {
                 Accept: "application/json",
                 'Content-Type': "application/json",
-                "Access-Control-Allow-Credentials": true
+                "Access-Control-Allow-Credentials": true,
+                "Access-Control-Allow-Origin": "*"
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            credentials: "include",
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    return response.json();
+                } else {
+                    console.log(JSON.parse(JSON.stringify(response)));
+                }
+            })
             .then(data => console.log(data))
-            .catch(event => console.log(event));
+            .catch(error => console.error(error));
     }
 
 
