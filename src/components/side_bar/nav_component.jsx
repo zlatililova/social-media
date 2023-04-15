@@ -1,10 +1,11 @@
 
 import "./side_bar.css"
 
-export function SideBar({ setPage, userName }) {
+export function SideBar({ setPage, username }) {
 
-    let isUserLogged = (userName !== "")
+    let isUserLogged = (username === "")
     console.log(isUserLogged)
+    console.log(username)
 
     return (
 

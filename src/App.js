@@ -23,14 +23,15 @@ function App() {
         <div>
           {
             {
-              login: <Login callback={setUserName} />,
-              register: <Register />,
+              login: <Login callback={setUserName} setPage={setPage} />,
+              register: <Register callback={setUserName} setPage={setPage} />,
               posts: <GetAllPosts currentUser={userName} />,
               create: <CreatePost />,
               logout: <Logout callback={setUserName} />,
             }[page]
           }
         </div>
+        {console.log(userName)}
       </main>
     </div>
   );

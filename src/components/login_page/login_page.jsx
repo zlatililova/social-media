@@ -1,6 +1,5 @@
-import { GetAllPosts } from "../posts_page/posts_page";
 
-export function Login({ callback }) {
+export function Login({ callback, setPage }) {
     const sumbitTheForm = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -24,7 +23,7 @@ export function Login({ callback }) {
                 }
                 else {
                     callback(name.value);
-                    < GetAllPosts />
+                    setPage("posts")
                 }
             })
             .catch(error => console.error(error));

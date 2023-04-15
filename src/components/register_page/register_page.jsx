@@ -1,4 +1,4 @@
-export function Register() {
+export function Register({ setPage }) {
     const sumbitTheForm = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -20,7 +20,7 @@ export function Register() {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 } else {
-                    console.log("Success registration");
+                    setPage("login")
                 }
             })
             .catch(error => console.error(error));
@@ -33,7 +33,7 @@ export function Register() {
             <form onSubmit={sumbitTheForm}>
                 <div>
                     <input type="text" name="name" placeholder="Enter username" />
-                    <button type="submit">Login</button>
+                    <button type="submit">Register</button>
                 </div>
             </form>
         </div>
