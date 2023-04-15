@@ -2,7 +2,7 @@ import { PostCard } from "../post_card/post_card";
 import { useEffect, useState } from "react";
 
 
-export function GetAllPosts() {
+export function GetAllPosts({ currentUser }) {
 
     let [posts, addPost] = useState([]);
 
@@ -44,6 +44,7 @@ export function GetAllPosts() {
                         content={post.content}
                         userName={post.userName}
                         likes={post.likes}
+                        currentUser={currentUser}
                     />
                 ))}
             </div>

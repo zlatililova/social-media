@@ -3,6 +3,7 @@ import { GetAllPosts } from "./posts_page/posts_page";
 import { Register } from "./register_page/register_page";
 import { useState } from "react";
 import { CreatePost } from "./create_post/create_post";
+import { Logout } from "./logout_page/logout_page";
 
 export function NavComponent() {
 
@@ -38,17 +39,27 @@ export function NavComponent() {
             >
                 Create Post
             </button>
+            <button
+                onClick={() => {
+                    setPage("logout")
+                }}
+            >
+                Logout
+            </button>
             <div>
                 {
                     {
                         'login': <Login callback={setUsername} />,
                         'register': <Register />,
-                        'posts': <GetAllPosts />,
-                        'create': <CreatePost />
+                        'posts': <GetAllPosts currentUser={username} />,
+                        'create': <CreatePost />,
+                        'logout': <Logout callback={setUsername} />
                     }[page]
                 }
             </div>
-
+            {
+                console.log(username)
+            }
         </div>
 
     )
