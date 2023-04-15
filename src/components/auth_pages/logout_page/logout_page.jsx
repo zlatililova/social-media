@@ -1,5 +1,5 @@
 
-export function Logout({ callback }) {
+export function Logout({ callback, setPage }) {
     const logout = () => {
 
         fetch('http://localhost:3000/logout', {
@@ -19,6 +19,7 @@ export function Logout({ callback }) {
                 else {
                     console.log("Logged out")
                     callback("")
+                    setPage("login")
                 }
             })
             .catch(error => console.error(error));
@@ -26,9 +27,9 @@ export function Logout({ callback }) {
 
 
     return (
-        <div>
-            <label> Logout here </label>
-            <button onClick={logout}>Logout</button>
+        <div className="main_div auth_form" >
+            <label className="main_text"> Logout here </label>
+            <button onClick={logout} className="button">Logout</button>
         </div >
     );
 }

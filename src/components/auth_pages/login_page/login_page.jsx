@@ -1,4 +1,4 @@
-
+import "../auth_pages.css"
 export function Login({ callback, setPage }) {
     const sumbitTheForm = (event) => {
         event.preventDefault();
@@ -31,13 +31,11 @@ export function Login({ callback, setPage }) {
 
 
     return (
-        <div>
-            <label> Login here </label>
-            <form onSubmit={sumbitTheForm}>
-                <div>
-                    <input type="text" name="name" placeholder="Enter username" />
-                    <button type="submit">Login</button>
-                </div>
+        <div className="main_div">
+            <label className="main_text"> Login here </label>
+            <form className="auth_form" onSubmit={sumbitTheForm}>
+                <input type="text" name="name" placeholder="Enter username" className="name_input" />
+                <button type="submit" className="button">Login</button>
             </form>
         </div>
     );

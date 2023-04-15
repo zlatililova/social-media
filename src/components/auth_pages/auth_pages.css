@@ -1,0 +1,41 @@
+input[type="text"]:focus {
+  border: 3px solid #555;
+}
+
+.main_text {
+  font-size: 5rem;
+  padding-bottom: 2rem;
+}
+
+.main_div {
+  padding-top: 5rem;
+}
+
+.auth_form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+.name_input {
+  height: 4rem;
+  width: 45%;
+  align-self: center;
+  font-size: 2rem;
+}
+
+.button {
+  width: 25%;
+  margin: 0rem;
+  border-radius: 4px;
+  align-self: center;
+  padding: 1rem 2rem;
+  background-color: #fcd7ad;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}

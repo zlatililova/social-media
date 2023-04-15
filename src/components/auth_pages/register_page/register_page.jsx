@@ -28,13 +28,11 @@ export function Register({ setPage }) {
 
 
     return (
-        <div>
-            <label> Register here </label>
-            <form onSubmit={sumbitTheForm}>
-                <div>
-                    <input type="text" name="name" placeholder="Enter username" />
-                    <button type="submit">Register</button>
-                </div>
+        <div className="main_div">
+            <label className="main_text"> Register here </label>
+            <form onSubmit={sumbitTheForm} className="auth_form">
+                <input type="text" name="name" placeholder="Enter username" className="name_input" />
+                <button type="submit" className="button">Register</button>
             </form>
         </div>
     );
