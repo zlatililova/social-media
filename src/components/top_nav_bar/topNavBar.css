@@ -1,0 +1,9 @@
+.navbar__bg {
+  background-color: #5296a5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10rem;
+  padding-left: 4rem;
+}
