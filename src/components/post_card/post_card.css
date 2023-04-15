@@ -44,3 +44,16 @@
   height: 2rem;
   width: 6rem;
 }
+
+.main_posts_div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.column_container {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}

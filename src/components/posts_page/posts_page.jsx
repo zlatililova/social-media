@@ -1,5 +1,7 @@
+import { alignPropType } from "react-bootstrap/esm/types";
 import { PostCard } from "../post_card/post_card";
 import { useEffect, useState } from "react";
+import "../post_card/post_card.css"
 
 
 export function GetAllPosts({ currentUser }) {
@@ -37,9 +39,8 @@ export function GetAllPosts({ currentUser }) {
 
 
     return (
-        <div>
-            <label> Posts </label>
-            <div>
+        <div className="column_container">
+            <div className="main_posts_div">
                 {posts.map(post => (
                     <PostCard
                         id={post.id}
