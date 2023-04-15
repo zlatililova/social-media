@@ -1,3 +1,5 @@
+import { GetAllPosts } from "../posts_page/posts_page";
+
 export function Login() {
     const sumbitTheForm = (event) => {
         event.preventDefault();
@@ -20,14 +22,10 @@ export function Login() {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 }
-                const contentType = response.headers.get("content-type");
-                if (contentType && contentType.indexOf("application/json") !== -1) {
-                    return response.json();
-                } else {
-                    console.log(JSON.parse(JSON.stringify(response)));
+                else {
+                    <GetAllPosts />
                 }
             })
-            .then(data => console.log(data))
             .catch(error => console.error(error));
     }
 
