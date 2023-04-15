@@ -40,6 +40,7 @@ export function GetAllPosts({ currentUser }) {
             <div>
                 {posts.map(post => (
                     <PostCard
+                        id={post.id}
                         key={post.id}
                         content={post.content}
                         userName={post.userName}
