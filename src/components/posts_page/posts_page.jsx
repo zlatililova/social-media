@@ -27,7 +27,6 @@ export function GetAllPosts() {
             })
             .then(
                 (data) => {
-                    // console.log(data);
                     addPost(data)
                 }
             )

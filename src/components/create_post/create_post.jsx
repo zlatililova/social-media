@@ -1,13 +1,13 @@
-import { GetAllPosts } from "../posts_page/posts_page";
+export function CreatePost() {
 
-export function Login({ callback }) {
-    const sumbitTheForm = (event) => {
+
+    const CreatePost = (event) => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name;
-        const body = { name: name.value };
+        const content = form.content;
+        const body = { content: content.value };
 
-        fetch('http://localhost:3000/login', {
+        fetch('http://localhost:3000/posts', {
             method: 'POST',
             headers: {
                 Accept: "application/json",
@@ -21,10 +21,8 @@ export function Login({ callback }) {
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
-                }
-                else {
-                    callback(name.value);
-                    < GetAllPosts />
+                } else {
+                    console.log("Success post creation");
                 }
             })
             .catch(error => console.error(error));
@@ -33,11 +31,11 @@ export function Login({ callback }) {
 
     return (
         <div>
-            <label> Login here </label>
-            <form onSubmit={sumbitTheForm}>
+            <label> Create a post </label>
+            <form onSubmit={CreatePost}>
                 <div>
-                    <input type="text" name="name" placeholder="Enter username" />
-                    <button type="submit">Login</button>
+                    <input type="text" name="content" placeholder="Enter post Content" />
+                    <button type="submit">Create a post</button>
                 </div>
             </form>
         </div>
