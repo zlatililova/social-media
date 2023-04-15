@@ -1,0 +1,46 @@
+.post_card_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin-left: 25%;
+  border: 0.1rem solid black;
+}
+
+.username_h3 {
+  font-weight: bold;
+  text-align: end;
+  align-self: flex-end;
+  padding-right: 2rem;
+  padding-bottom: 0%;
+}
+
+.like_div {
+  display: flex;
+  gap: 1rem;
+  padding-left: 3rem;
+  align-items: baseline;
+  align-content: center;
+  width: 90%;
+  padding-bottom: 1rem;
+}
+
+.like_btn {
+  background-color: #fcd7ad;
+  color: black;
+  border-radius: 0.3rem;
+  border: 0.2rem solid #fcd7ad;
+  height: 2rem;
+  width: 6rem;
+}
+
+.delete_btn {
+  align-self: flex-end;
+  background-color: red;
+  color: white;
+  border-radius: 0.3rem;
+  border: 0.2rem solid red;
+  margin-left: auto;
+  height: 2rem;
+  width: 6rem;
+}

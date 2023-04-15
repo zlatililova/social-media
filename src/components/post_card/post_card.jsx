@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GetAllPosts } from "../posts_page/posts_page";
+import "./post_card.css"
 
 export function PostCard({ id, content, likes, userName, currentUser, callback, numOfPosts }) {
 
@@ -56,18 +56,24 @@ export function PostCard({ id, content, likes, userName, currentUser, callback, 
     }
 
     return (
-        <div style={{ border: '1px solid black', margin: "50px" }}>
-            <h3>{userName}</h3>
+        <div className="post_card_div">
+            <h3 className="username_h3">{userName}</h3>
+            <hr style={{
+                background: 'black',
+                color: 'black',
+                height: '1px',
+                width: "100%"
+            }} />
             <h1>{content}</h1>
-            <small>{like}</small>
-            {
-                noUser && <button onClick={likePost}>Like</button>
-            }
-            {
-                console.log(user)}{
-                (user && noUser) && <button onClick={deletePost}>Delete</button>
-            }
-
+            <div className="like_div">
+                <small>Likes: {like}</small>
+                {
+                    noUser && <button onClick={likePost} className="like_btn">Like</button>
+                }
+                {
+                    (user && noUser) && <button onClick={deletePost} className="delete_btn">Delete</button>
+                }
+            </div>
         </div>
     )
 }
