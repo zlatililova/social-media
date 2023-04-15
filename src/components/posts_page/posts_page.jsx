@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export function GetAllPosts({ currentUser }) {
 
     let [posts, addPost] = useState([]);
+    let [postsNum, setPostNum] = useState(0);
 
     useEffect(() => {
         fetch('http://localhost:3000/posts', {
@@ -28,10 +29,11 @@ export function GetAllPosts({ currentUser }) {
             .then(
                 (data) => {
                     addPost(data)
+                    setPostNum(postsNum + 1)
                 }
             )
             .catch(error => console.error(error));
-    }, []);
+    }, [postsNum]);
 
 
     return (
@@ -46,6 +48,8 @@ export function GetAllPosts({ currentUser }) {
                         userName={post.userName}
                         likes={post.likes}
                         currentUser={currentUser}
+                        callback={setPostNum}
+                        numOfPosts={postsNum}
                     />
                 ))}
             </div>
