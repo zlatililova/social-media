@@ -28,7 +28,7 @@ export function Logout({ callback }) {
     return (
         <div>
             <label> Logout here </label>
-            {logout()}
+            <button onClick={logout}>Logout</button>
         </div >
     );
 }
