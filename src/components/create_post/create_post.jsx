@@ -1,4 +1,6 @@
-export function CreatePost() {
+import "../auth_pages/auth_pages.css"
+
+export function CreatePost({ setPage }) {
 
 
     const CreatePost = (event) => {
@@ -23,6 +25,7 @@ export function CreatePost() {
                     throw new Error("Network response was not ok");
                 } else {
                     console.log("Success post creation");
+                    setPage("posts")
                 }
             })
             .catch(error => console.error(error));
@@ -30,13 +33,11 @@ export function CreatePost() {
 
 
     return (
-        <div>
-            <label> Create a post </label>
-            <form onSubmit={CreatePost}>
-                <div>
-                    <input type="text" name="content" placeholder="Enter post Content" />
-                    <button type="submit">Create a post</button>
-                </div>
+        <div className="main_div">
+            <label className="main_text"> Create a post </label>
+            <form onSubmit={CreatePost} className="auth_form">
+                <input type="text" name="content" placeholder="Enter post Content" className="name_input" />
+                <button type="submit" className="button">Create a post</button>
             </form>
         </div>
     );

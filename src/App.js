@@ -26,7 +26,7 @@ function App() {
               login: <Login callback={setUserName} setPage={setPage} />,
               register: <Register callback={setUserName} setPage={setPage} />,
               posts: <GetAllPosts currentUser={userName} />,
-              create: <CreatePost />,
+              create: <CreatePost setPage={setPage} />,
               logout: <Logout callback={setUserName} setPage={setPage} />,
             }[page]
           }
