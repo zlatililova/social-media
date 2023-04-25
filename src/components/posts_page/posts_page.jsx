@@ -10,31 +10,35 @@ export function GetAllPosts({ currentUser }) {
     let [postsNum, setPostNum] = useState(0);
 
     useEffect(() => {
-        fetch('http://localhost:3000/posts', {
-            method: 'GET',
-            headers: {
-                Accept: "application/json",
-                'Content-Type': "application/json",
-                "Access-Control-Allow-Credentials": true,
-                "Access-Control-Allow-Origin": "*"
-            },
-            credentials: "include",
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                else {
-                    return response.json();
-                }
+
+        setInterval(() => {
+            fetch('http://localhost:3000/posts', {
+                method: 'GET',
+                headers: {
+                    Accept: "application/json",
+                    'Content-Type': "application/json",
+                    "Access-Control-Allow-Credentials": true,
+                    "Access-Control-Allow-Origin": "*"
+                },
+                credentials: "include",
             })
-            .then(
-                (data) => {
-                    addPost(data)
-                    setPostNum(postsNum + 1)
-                }
-            )
-            .catch(error => console.error(error));
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    else {
+                        return response.json();
+                    }
+                })
+                .then(
+                    (data) => {
+                        addPost(data)
+                        setPostNum(postsNum + 1)
+                    }
+                )
+                .catch(error => console.error(error));
+        }, 1000);
+
     }, [postsNum]);
 
 

@@ -71,7 +71,7 @@ export function PostCard({ id, content, likes, userName, currentUser, callback, 
                     noUser && <button onClick={likePost} className="like_btn">Like</button>
                 }
                 {
-                    (user && noUser) && <button onClick={deletePost} className="delete_btn">Delete</button>
+                    (user && noUser) && <button onClick={deletePost} style={{ "background-color": "red" }} className="delete_btn">Delete</button>
                 }
             </div>
         </div>
